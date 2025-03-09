@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-int Cong(int a, int b);
-int Tru(int c, int d); 
-int Nhan(int e, int f);
-int Chia(int g, int h);
-
 void main()
 {
 	int x = Cong(1, 2);
