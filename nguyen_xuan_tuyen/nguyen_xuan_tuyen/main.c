@@ -1,22 +1,23 @@
 ﻿#include <stdio.h>
-// Bài 2: Hàm đếm số ký tự khoảng trắng trong chuỗi
 
-int count_space(const char* s) 
-{
-    int dem = 0; 
-    while (*s) 
-    { 
-        if (*s == ' ') 
-        {  
-            dem++;
+// Bài 3: Hàm chuyển đổi chữ thường thành chữ IN HOA
+void change_a_A(char* s) {
+    while (*s) { // Lặp qua từng ký tự trong chuỗi
+        if (*s >= 'a' && *s <= 'z') // Nếu là chữ thường
+        { 
+            *s = *s - ('a' - 'A'); // Chuyển thành chữ IN HOA
         }
-        s++; 
+        s++;
     }
-    return dem; 
 }
+
 int main() 
 {
-    char str[] = "Hom nay toi lam bai tap chuoi va con tro";
-    printf("So khoang cach trong chuoi la: %d\n", count_space(str));
+    char str[] = "nguyen xuan TuyEn";
+    printf("Chuoi input: %s\n", str);
+
+    change_a_A(str); 
+
+    printf("Chuỗi sau khi chuyển: %s\n", str);
     return 0;
 }
