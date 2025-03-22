@@ -1,14 +1,22 @@
-﻿
-#include <stdio.h>
-#include <string.h>
-// Bài 1: Xây dụng hàm đếm số ký tự trong chuỗi
+﻿#include <stdio.h>
+// Bài 2: Hàm đếm số ký tự khoảng trắng trong chuỗi
 
-int dem_ki_tu(const char *s) {
-    return strlen(s); // Dùng hàm strlen để đếm số ký tự
+int count_space(const char* s) 
+{
+    int dem = 0; 
+    while (*s) 
+    { 
+        if (*s == ' ') 
+        {  
+            dem++;
+        }
+        s++; 
+    }
+    return dem; 
 }
-
-int main() {
-    char str[] = "Xuan Tuyen";
-    printf("So ki tu trong chuoi la: %d\n", dem_ki_tu(str));
+int main() 
+{
+    char str[] = "Hom nay toi lam bai tap chuoi va con tro";
+    printf("So khoang cach trong chuoi la: %d\n", count_space(str));
     return 0;
 }
