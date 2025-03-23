@@ -1,23 +1,28 @@
-﻿#include <stdio.h>
+﻿#include<stdio.h>
 
-// Bài 3: Hàm chuyển đổi chữ thường thành chữ IN HOA
-void change_a_A(char* s) {
-    while (*s) { // Lặp qua từng ký tự trong chuỗi
-        if (*s >= 'a' && *s <= 'z') // Nếu là chữ thường
-        { 
-            *s = *s - ('a' - 'A'); // Chuyển thành chữ IN HOA
-        }
-        s++;
-    }
-}
-
-int main() 
+char* TimChuoi(char* str, char* substr);
 {
-    char str[] = "nguyen xuan TuyEn";
-    printf("Chuoi input: %s\n", str);
+	int chieudaistr = SoLuongKiTu(str);
+	int chieudaisubstr = SoLuongKiTu(substr);
+	for (int i = 0; i < chieudaistr; i++)
+	{
+		int j = 0;
+		for (j = 0; j < chieudaisubstr; j++)
+		{
+			if (str[i + j] != substr[j])
+				break;
+		}
+	}if (j == chieudaisubstr)
+		return str + 1;
 
-    change_a_A(str); 
+}
+return 0;
 
-    printf("Chuỗi sau khi chuyển: %s\n", str);
-    return 0;
+void main()
+{
+	char str[] = "xin chao moi nguoi";
+	char substr[] = "chao";
+
+	char* x = TimChuoi(str, substr);
+
 }
